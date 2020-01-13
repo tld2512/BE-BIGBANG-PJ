@@ -1,6 +1,7 @@
 package com.pj.controllers;
 
 import com.pj.models.Objective;
+import com.pj.models.Syllabus;
 import com.pj.services.IObjectiveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,6 +38,12 @@ public class ObjectiveController {
     public ResponseEntity<Objective> updateObjective(@RequestBody Objective objective){
         objectiveService.save(objective);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/objective/getSyllabusName/{id}")
+    public ResponseEntity<Syllabus> getSyllabusName(@PathVariable Long id){
+         Syllabus syllabus = objectiveService.findById(id).getSyllabus();
+         return new ResponseEntity<>(syllabus, HttpStatus.OK);
     }
 
 }

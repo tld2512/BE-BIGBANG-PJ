@@ -16,12 +16,12 @@ public class Objective {
     private String name;
 
     @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "syllabus_id")
     private Syllabus syllabus;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "objective", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "objective", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Skill> skillList;
 
     public Objective() {

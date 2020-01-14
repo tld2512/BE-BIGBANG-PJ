@@ -10,12 +10,16 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private boolean isObliged;
+    private String description;
+    private boolean status;
 
     @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "objective_id")
     private Objective objective;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Activity activity;
 
     public Skill() {
     }

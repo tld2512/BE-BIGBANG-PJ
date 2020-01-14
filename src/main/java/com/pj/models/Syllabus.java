@@ -17,7 +17,7 @@ public class Syllabus {
     private String description;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "syllabus", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "syllabus", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     private List<Objective> objectiveList;
 
     public Syllabus() {

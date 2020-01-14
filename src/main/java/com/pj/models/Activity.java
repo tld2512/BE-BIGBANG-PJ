@@ -15,7 +15,7 @@ public class Activity {
     private String name;
 
     @JsonManagedReference
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Skill> skillList;
 
     public Activity() {

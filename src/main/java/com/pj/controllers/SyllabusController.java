@@ -85,6 +85,13 @@ public class SyllabusController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("/syllabus/{id}/objectiveList")
+    public ResponseEntity<List<Objective>> getObjListBySyllabus(@PathVariable Long id) {
+        Syllabus syllabusSelected = syllabusService.findById(id);
+        List<Objective> objectiveList = objectiveService.findAllBySyllabus(syllabusSelected);
+        return new ResponseEntity<>(objectiveList, HttpStatus.OK);
+    }
+
     private void saveSyllabusFromForm(Syllabus syllabus, SyllabusForm syllabusForm) {
 //        List<Objective> objectives = objectiveService.findAllById(syllabusForm.getObjectiveList());
         if (!Objects.isNull(syllabusForm.getId())) {

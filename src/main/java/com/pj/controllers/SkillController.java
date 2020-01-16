@@ -38,4 +38,6 @@ public class SkillController {
         skillService.save(skill);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+//    @GetMapping("/skill/id/")
 }

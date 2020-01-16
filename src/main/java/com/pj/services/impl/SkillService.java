@@ -1,10 +1,13 @@
 package com.pj.services.impl;
 
+import com.pj.models.Objective;
 import com.pj.models.Skill;
 import com.pj.repositories.SkillRepository;
 import com.pj.services.ISkillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SkillService implements ISkillService {
@@ -29,5 +32,10 @@ public class SkillService implements ISkillService {
     @Override
     public void delete(Long id) {
         skillRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Skill> findAllByObjective(Objective objective) {
+        return skillRepository.findAllByObjective(objective);
     }
 }

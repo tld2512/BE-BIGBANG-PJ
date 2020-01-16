@@ -1,6 +1,7 @@
 package com.pj.services.impl;
 
 import com.pj.models.Objective;
+import com.pj.models.Syllabus;
 import com.pj.repositories.ObjectiveRepository;
 import com.pj.services.IObjectiveService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class ObjectiveService implements IObjectiveService {
     @Override
     public List<Objective> findAllById(Iterable<Long> ids) {
         return objectiveRepository.findAllById(ids);
+    }
+
+    @Override
+    public List<Objective> findAllBySyllabus(Syllabus syllabus) {
+        return objectiveRepository.findAllBySyllabus(syllabus);
     }
 
     @Override

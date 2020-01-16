@@ -24,10 +24,10 @@ public class ObjectiveService implements IObjectiveService {
         return objectiveRepository.findAllById(ids);
     }
 
-    @Override
-    public List<Objective> findAllBySyllabus(Syllabus syllabus) {
-        return objectiveRepository.findAllBySyllabus(syllabus);
-    }
+//    @Override
+//    public List<Objective> findAllBySyllabus(Syllabus syllabus) {
+//        return objectiveRepository.findAllBySyllabus(syllabus);
+//    }
 
     @Override
     public Objective findById(Long id) {

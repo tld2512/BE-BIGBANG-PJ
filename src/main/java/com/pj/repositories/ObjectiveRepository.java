@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ObjectiveRepository extends JpaRepository<Objective, Long> {
 
-    List<Objective> findAllBySyllabus(Syllabus syllabus);
+//    List<Objective> getObjectivesBy
 }

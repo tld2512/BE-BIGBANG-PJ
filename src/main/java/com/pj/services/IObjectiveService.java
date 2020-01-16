@@ -8,5 +8,5 @@ import java.util.List;
 public interface IObjectiveService extends GeneralService<Objective> {
     List<Objective> findAll();
     List<Objective> findAllById(Iterable<Long> ids);
-    List<Objective> findAllBySyllabus(Syllabus syllabus);
+//    List<Objective> findAllBySyllabus(Syllabus syllabus);
 }

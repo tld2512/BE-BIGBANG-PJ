@@ -6,6 +6,8 @@ import com.pj.services.ISyllabusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class SyllabusService implements ISyllabusService {
 
@@ -30,5 +32,10 @@ public class SyllabusService implements ISyllabusService {
     @Override
     public void delete(Long id) {
         syllabusRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Syllabus> findByIdSyllabus(Long id) {
+        return syllabusRepository.findById(id);
     }
 }

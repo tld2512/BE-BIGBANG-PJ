@@ -15,14 +15,15 @@ public class Objective {
     private Long id;
     private String name;
 
-    @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "syllabus_id")
-    private Syllabus syllabus;
+//    @JsonBackReference
+//    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "syllabus_id")
+//    private Syllabus syllabus;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "objective", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Skill> skillList;
+//    @JsonManagedReference
+//    @OneToMany(mappedBy = "objective", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @OneToMany(targetEntity = Activity.class)
+//    private List<Activity> activities;
 
     public Objective() {
     }

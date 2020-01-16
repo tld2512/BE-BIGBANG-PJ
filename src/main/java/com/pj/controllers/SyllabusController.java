@@ -88,7 +88,7 @@ public class SyllabusController {
     @GetMapping("/syllabus/{id}/objectiveList")
     public ResponseEntity<List<Objective>> getObjListBySyllabus(@PathVariable Long id) {
         Syllabus syllabusSelected = syllabusService.findById(id);
-        List<Objective> objectiveList = objectiveService.findAllBySyllabus(syllabusSelected);
+        List<Objective> objectiveList = syllabusSelected.getObjectiveList();
         return new ResponseEntity<>(objectiveList, HttpStatus.OK);
     }
 

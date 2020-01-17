@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ObjectiveService implements IObjectiveService {
@@ -24,10 +25,10 @@ public class ObjectiveService implements IObjectiveService {
         return objectiveRepository.findAllById(ids);
     }
 
-//    @Override
-//    public List<Objective> findAllBySyllabus(Syllabus syllabus) {
-//        return objectiveRepository.findAllBySyllabus(syllabus);
-//    }
+    @Override
+    public Optional<Objective> findByIdObjective(Long id) {
+        return objectiveRepository.findById(id);
+    }
 
     @Override
     public Objective findById(Long id) {

@@ -15,14 +15,14 @@ public class Activity {
     private Long id;
     private String name;
 
-    @JsonManagedReference
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Skill> skillList;
-
-    @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "objective_id")
-    private Objective objective;
+//    @JsonManagedReference
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private List<Skill> skillList;
+//
+//    @JsonBackReference
+//    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "objective_id")
+//    private Objective objective;
 
     public Activity() {
     }

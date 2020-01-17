@@ -1,8 +1,5 @@
 package com.pj.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,7 +12,6 @@ public class Syllabus {
     private String image;
     private String description;
 
-//    @JsonManagedReference
     @OneToMany(targetEntity = Objective.class)
     private List<Objective> objectiveList;
 

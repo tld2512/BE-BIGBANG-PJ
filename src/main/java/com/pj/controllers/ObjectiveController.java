@@ -23,8 +23,7 @@ public class ObjectiveController {
     private IObjectiveService objectiveService;
     @Autowired
     private ISyllabusService syllabusService;
-//    @Autowired
-//    private ISkillService skillService;
+
 
     @GetMapping("/objective")
     public ResponseEntity<List<Objective>> getList() {
@@ -54,6 +53,13 @@ public class ObjectiveController {
     public ResponseEntity<Objective> updateObjective(@RequestBody Objective objective) {
         objectiveService.save(objective);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/objective/{id}/skillList")
+    public ResponseEntity<List<Skill>> getSkillListByObjective(@PathVariable Long id) {
+        Objective objectiveSelected = objectiveService.findById(id);
+        List<Skill> skillsList = objectiveSelected.getSkillList();
+        return new ResponseEntity<>(skillsList, HttpStatus.OK);
     }
 
 //    @GetMapping("/objective/getSyllabusName/{id}")

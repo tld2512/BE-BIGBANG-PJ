@@ -15,16 +15,10 @@ public class Objective {
     private Long id;
     private String name;
 
-//    @JsonBackReference
-//    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "syllabus_id")
-//    private Syllabus syllabus;
-
-//    @JsonManagedReference
-//    @OneToMany(mappedBy = "objective", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @OneToMany(targetEntity = Activity.class)
-//    private List<Activity> activities;
+    @OneToMany(targetEntity = Skill.class)
+    private List<Skill> skillList;
 
     public Objective() {
     }
+
 }

@@ -22,8 +22,8 @@ public class Objective {
 
 //    @JsonManagedReference
 //    @OneToMany(mappedBy = "objective", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @OneToMany(targetEntity = Activity.class)
-//    private List<Activity> activities;
+    @OneToMany(targetEntity = Skill.class)
+    private List<Skill> skills;
 
     public Objective() {
     }

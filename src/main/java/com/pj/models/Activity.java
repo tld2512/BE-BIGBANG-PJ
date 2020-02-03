@@ -1,6 +1,5 @@
 package com.pj.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
@@ -16,13 +15,8 @@ public class Activity {
     private String name;
 
     @JsonManagedReference
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Skill> skillList;
-
-    @JsonBackReference
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "objective_id")
-    private Objective objective;
+    @OneToMany(targetEntity = LearningActivity.class)
+    private List<LearningActivity> learningActivities;
 
     public Activity() {
     }

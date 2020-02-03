@@ -8,7 +8,6 @@ import com.pj.services.ISkillService;
 import com.pj.services.ISyllabusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +22,8 @@ public class ObjectiveController {
     private IObjectiveService objectiveService;
     @Autowired
     private ISyllabusService syllabusService;
+    @Autowired
+    private ISkillService skillService;
 //    @Autowired
 //    private ISkillService skillService;
 
@@ -62,11 +63,11 @@ public class ObjectiveController {
 //        return new ResponseEntity<>(syllabus, HttpStatus.OK);
 //    }
 
-//    @GetMapping("/objective/id/getSkillList")
-//    public ResponseEntity<List<Skill>> getSkillListByObjective(@PathVariable Long id) {
-//        Objective objectiveSelected = objectiveService.findById(id);
-//        List<Skill> skills = skillService.findAllByObjective(objectiveSelected);
-//        return new ResponseEntity<>(skills, HttpStatus.OK);
-//    }
+    @GetMapping("/objective/{id}/getSkillList")
+    public ResponseEntity<List<Skill>> getSkillListByObjective(@PathVariable Long id) {
+        Objective objectiveSelected = objectiveService.findById(id);
+        List<Skill> skills = objectiveSelected.getSkills();
+        return new ResponseEntity<>(skills, HttpStatus.OK);
+    }
 
 }

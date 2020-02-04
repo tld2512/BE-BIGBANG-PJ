@@ -1,6 +1,5 @@
 package com.pj.controllers;
 
-import com.pj.models.Activity;
 import com.pj.models.LearningActivity;
 import com.pj.services.impl.LearningActivityService;
 import org.springframework.beans.factory.annotation.Autowired;

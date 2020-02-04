@@ -1,6 +1,5 @@
 package com.pj.services.impl;
 
-import com.pj.models.Activity;
 import com.pj.models.LearningActivity;
 import com.pj.repositories.LearningActivityRepository;
 import com.pj.services.ILearningActivityService;

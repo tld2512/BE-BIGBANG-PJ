@@ -30,6 +30,11 @@ public class ObjectiveService implements IObjectiveService {
         return objectiveRepository.findById(id);
     }
 
+//    @Override
+//    public List<Objective> findAllBySyllabus(Syllabus syllabus) {
+//        return objectiveRepository.findAllBySyllabus(syllabus);
+//    }
+
     @Override
     public Objective findById(Long id) {
         return objectiveRepository.findById(id).get();

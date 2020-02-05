@@ -60,6 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/getRoles").permitAll()
                 .antMatchers("/image/**").permitAll()
+//                .antMatchers(HttpMethod.POST, "/api/auth/signup").access("hasRole('ROLE_ADMIN')")
                 .antMatchers(HttpMethod.GET,
                         "/",
                         "/api/syllabus",
@@ -70,17 +71,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/syllabus/create",
                         "/api/objective/create",
                         "/api/skill/create",
-                        "/api/activity/create").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_PM')")
+                        "/api/activity/create").access("hasRole('ROLE_PM')")
                 .antMatchers(HttpMethod.PUT,
                         "/api/syllabus/update",
                         "/api/objective/update",
                         "/api/skill/update",
-                        "/api/activity/update").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_PM')")
+                        "/api/activity/update").access("hasRole('ROLE_PM')")
                 .antMatchers(HttpMethod.DELETE,
                         "/api/syllabus/{id}",
                         "/api/objective/{id}",
                         "/api/skill/{id}",
-                        "/api/activity/{id}").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_PM')")
+                        "/api/activity/{id}").access("hasRole('ROLE_PM')")
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()

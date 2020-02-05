@@ -6,5 +6,5 @@ import com.pj.models.Skill;
 import java.util.List;
 
 public interface ISkillService extends GeneralService<Skill> {
-    List<Skill> findAllByObjective(Objective objective);
+//    List<Skill> findAllByObjective(Objective objective);
 }

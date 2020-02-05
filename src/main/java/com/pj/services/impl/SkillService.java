@@ -34,8 +34,8 @@ public class SkillService implements ISkillService {
         skillRepository.deleteById(id);
     }
 
-    @Override
-    public List<Skill> findAllByObjective(Objective objective) {
-        return skillRepository.findAllByObjective(objective);
-    }
+//    @Override
+//    public List<Skill> findAllByObjective(Objective objective) {
+//        return skillRepository.findAllByObjective(objective);
+//    }
 }

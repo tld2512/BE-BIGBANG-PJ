@@ -10,4 +10,5 @@ public interface IObjectiveService extends GeneralService<Objective> {
     List<Objective> findAll();
     List<Objective> findAllById(Iterable<Long> ids);
     Optional<Objective> findByIdObjective(Long id);
+//    List<Objective> findAllBySyllabus(Syllabus syllabus);
 }

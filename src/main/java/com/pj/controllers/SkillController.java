@@ -1,5 +1,6 @@
 package com.pj.controllers;
 
+import com.pj.models.LearningActivity;
 import com.pj.models.Objective;
 import com.pj.models.Skill;
 import com.pj.models.Syllabus;
@@ -52,6 +53,13 @@ public class SkillController {
     public ResponseEntity<Skill> updateSkill(@RequestBody Skill skill) {
         skillService.save(skill);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/skill/{id}/learningActivityList")
+    public ResponseEntity<List<LearningActivity>> getLearning(@PathVariable Long id) {
+        Skill skillSelected = skillService.findById(id);
+        List<LearningActivity> learningActivityList = skillSelected.getLearningActivities();
+        return new ResponseEntity<>(learningActivityList, HttpStatus.OK);
     }
 
 //    @GetMapping("/skill/id/")

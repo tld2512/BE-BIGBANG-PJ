@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SkillService implements ISkillService {
@@ -32,6 +33,11 @@ public class SkillService implements ISkillService {
     @Override
     public void delete(Long id) {
         skillRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Skill> findByIdSkill(Long id) {
+        return skillRepository.findById(id);
     }
 
 //    @Override

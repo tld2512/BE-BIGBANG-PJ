@@ -1,9 +1,7 @@
 package com.pj.controllers;
 
-import com.pj.models.LearningActivity;
-import com.pj.models.Objective;
-import com.pj.models.Skill;
-import com.pj.models.Syllabus;
+import com.pj.models.*;
+import com.pj.services.impl.ActivityService;
 import com.pj.services.impl.LearningActivityService;
 import com.pj.services.impl.SkillService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +18,9 @@ import java.util.Optional;
 public class LearningActivityController {
     @Autowired
     private LearningActivityService activityService;
+
+    @Autowired
+    private ActivityService activityService2;
 
     @Autowired
     private SkillService skillService;
@@ -52,5 +53,11 @@ public class LearningActivityController {
     public ResponseEntity<LearningActivity> updateActivity(@RequestBody LearningActivity activity){
         activityService.save(activity);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/listActivity")
+    public ResponseEntity<List<Activity>> getListActivity(){
+        List<Activity> activities = (List<Activity>) activityService2.findAll();
+        return  new ResponseEntity<>(activities, HttpStatus.OK);
     }
 }
